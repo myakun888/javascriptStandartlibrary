@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>String</title>
+   <style>
+     
+   </style>
+</head>
+<body>
+
+   <script>
+      //secara dasar string sudah di bahas namun belum instance method dan instance properti ny
+
+      // STRING INSTANCE METHOD DAN STATIC METHOD
+      // kita bisa memanipulasi string dengan instance method dan static method ny, seperti merubah huruf kecil ke besar dll
+
+      const rasul = "rasul"
+
+      console.log(rasul)
+      console.log(rasul.toUpperCase())//RASUL, method untuk merubah ke huruf besar/ uppercase
+      console.log( rasul.toLowerCase())//rasul, method untuk merubah ke huruf kecil/ lowercase
+      console.log(rasul.length) //5, properti untuk menghitung jmlah kareter string
+      console.log(rasul.charAt(0)) //a, method untuk mengambil karakter stirng berdasrkan index( dimulai dari 0)
+
+      const rasull = `Muhammad SAW`
+      console.log(rasull.includes("SAW"))//true, ini untuk pengecekan, cara baca ny " apakah kalimat `SAW`, ada di dalam "Muhammad SAW", karena ada jadi return ny true, perlu di ingat ini bersifat case sensitif
+      console.log(rasull.replace('Muhammad','Ya rasullallah'))//Ya rasullallah, ini method untuk mereplace/menimpa kalimat dengan kalimat baru
+
+      const kitab = "Al-quran injil zabur"
+
+      console.log(kitab.split(" "))// array, ini memisahkan string berdasarkan parameter tertentu(dalam hal ini parameter spasi), menghasilkan array
+      //
+   </script>
+</body>
+</html>

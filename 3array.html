@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Array</title>
+</head>
+<body>
+   <script>
+   //tipe data array masuk dalam object
+   // membahas beberapa instance mthod yang dimiliki array, lengh, concat, map, dll
+   const nabi = ["muhammad", "rasul","kekasih allah"]
+   const kitabsuci = ["Al-Quran", "Injil","Zabur"]
+
+   //ARRAY LOOP, (perulangan/ iterasi pada array)
+   // kita bisa mengiterasi array menggukanan loopig for, while, atau for of /for in, tapi array memiliki instance method sepert foreach
+   nabi.forEach((e,i)=>{console.log(`${i}:${e}`)}) // memiliki dua parameter value, index
+   // tidak memakai index juga bisa
+   nabi.forEach((e)=>{console.log(e)}) // ini menggunakan arrow function
+   kitabsuci.forEach(e=>console.log(e)) // bahkan jika memakai arrow function jika satu baris, bisa kita buat lebih simmpel menghilangkan tanda kurung kurawal
+   
+   //====================
+   // ARRAY Queue
+   // dalam strucktur data kita menggenal Queue(antrian), konsep ny FIFO(first in first out)/ yang duluan masuk dia duluan keluar
+   // di dalam array kita bisa menggunakan instance method push() untuk masuk ny, dan keluar ny dengan unshift()
+
+   
+   const antrian =[] // array kosong masuk ny dengan method push
+   console.log('antrian')
+   console.log(antrian)
+   antrian.push("indonesia")
+   console.log(antrian)
+   antrian.push("amerika")
+   console.log(antrian)
+   antrian.push("inggris")
+   console.log(antrian)
+
+   //keluar
+   antrian.shift() // keluar dengan method shift
+   console.log(antrian)
+   antrian.shift()
+   console.log(antrian)
+   antrian.shift()
+   console.log(antrian) //[] array kosong
+
+//===================
+
+// ARRAY STUCK (tumpukan)
+
+// tumpukan kebalikan dari queue(antrian), dimana tumpukan konsepnya yang terakhir masuk dia yang pertama keluar atau di sebut dengan istilah LIFO(last in firs out), untuk masuk ny munkin menggunakan instance method push(), lalu keluarnya dengan method  pop()
+
+const tumpukan =[]
+console.log('tumpukan');
+console.log(tumpukan);
+
+//masuk dengan method push
+tumpukan.push("nabi muhammad"); // memasukan 'nabi muhammad'
+console.log(tumpukan);  
+tumpukan.push('Muhammad SAW');// memasukan 'Muhammad SAW'
+console.log(tumpukan);
+tumpukan.push('Ya rasullallah') // memasukan 'Ya rasullallah'
+console.log(tumpukan);
+
+// keluar dengan method pop
+// method pop ini mengeluarkan data array dari arrah belakan
+
+console.log(tumpukan);
+tumpukan.pop();// mengeluarkan 'Ya rasullalah'
+console.log(tumpukan);
+tumpukan.pop();// mengeluarkan 'Muhammad SAW'
+console.log(tumpukan);
+tumpukan.pop()// mengeluarkan 'nabi muhammad'
+console.log(tumpukan)
+
+//=================================
+
+
+// ARRAY SEARCH(PENCARIAN)
+// array juga memiliki instance method untuk pencarian seperti , find(), findindex(), include(), indexof() dll
+
+const angka = [5, 8, 12, 44, 134,44]
+const kalimat = ['ya rasul',"ya nabi allah","ya muhammad"];
+const cek = "ya rasul"
+// find(), mencari angka berdasarkan kondisi 
+
+console.log(angka)
+console.log(angka.find(e => e>4))// 5 , cari nilai(value) yang lebih besar dari 4 , dalam data diatas nilai yang lebih dari 4( dan pertama kali ditemui) adalah 5
+console.log(angka.findIndex(e=> e>8))//2 , nilai yang lebih besar(pertama kali di temui), dalam hal ini 12, 12 berada di index 2
+console.log(kalimat.includes(cek))//true, karena kata "ya rasul", juga menjadi value/ nilai di array kalimat
+ 
+//====================================
+
+
+//ARRAY FILTER(PENCARIAN)
+// array juga memeiliki instance method uang di gunakan untuk pencarian diantaran nya filter()
+
+const datax = [1,5,3,6,7,9,22,32];
+
+console.log(datax.filter((e)=> e<=10 ))// filter(), di dalam callback ny kita bisa menggunakan kondisi untuk pencarian nya
+console.log(datax.filter((e)=>e%2 ==0))// contah lainya
+
+//================================================
+
+
+//ARRAY TRANSFORM(PERUBAHAN)
+//array juga memiliki cara untuk merunbah value ny, diantaran dengan instance methode , map(), reduce(), redyceright();
+
+
+const dataxx = [1,4,5,3,5,6,10,11,9]
+const namaxx = ["ya rasul", "muhammad","nabi allah"]
+
+const kitabsplit = "alquran injil zabur".split(" ")
+//map(), instance methode untuk memeta ulang , mereturn/ mengembalikan array baru yang sudah di ubah
+
+console.log(kitabsplit.map((e)=>e.toUpperCase()))//
+console.log(dataxx.map((e)=>e+1))//
+
+
+
+// reduce, instance methode untuk menjumlahkan/ menggabungkan value array
+console.log(dataxx.reduce((a,b)=> a+b)) 
+console.log(namaxx.reduceRight((result,value)=>result+" "+ value))
+
+
+// ===================
+
+// kita juga bisa menggunakan cara chaining ( rantai bersambung), untuk mengabubngkan beberapa instance method
+// kita akan menggabungkan / menchaining beberapa methode
+
+      const  namanabi= "nabi muhammad saw"// ini huruf kecil
+      console.log(namanabi) // ini string 
+      // lalu dari string kita kasih method split, ini mereturn array, lalu di sambung dengan methode map() ini untuk memeta ulang
+
+      console.log(namanabi.split(" ").map((e)=>e.toUpperCase()))// ini langsung di sambung dengan tanda .(titik)
+
+   </script>
+</body>
+</html>

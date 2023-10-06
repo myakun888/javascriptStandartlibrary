@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Number</title>
+</head>
+<body>
+   
+   <script>
+//NUMBER
+const input = "12345" // type ny string
+const number = Number(input) // di conver ke type number
+console.log(number) // 12345, type number
+// 
+
+//number memiliki static properti dan static method
+// banyak y bisa lihat di documetnasi ny langsung di mdn js, disni kita akan bahas beberapa
+
+
+//-- ini static properti dari number , max_value, min_value, max_safe_value, min_safe_value;
+console.log( Number.MAX_VALUE) // 1.7976931348623157e+308
+// ini adalah angka maximal yang bisa di gunakan di js
+console.log(Number.MIN_VALUE) // 5e-324
+// ini adalah angka minmal yang bisa di gunakan di js
+console.log(Number.MAX_SAFE_INTEGER)// 9007199254740991
+// ini adalah angka batas aman maximal nilai di js (range min angka rekomendasi)
+console.log(Number.MIN_SAFE_INTEGER)//-9007199254740991 
+// ini adalah angka batas aman minimal nilai di js (range min angka rekomendasi)
+
+// masih banyak statiC properti lainya
+
+//=====================================
+// NUMBWE STATIC METHOD
+// ada beberapa diantaranya, number.isInteger() , number.Isnan(),number.
+
+
+const data2 = Number("12345") // in i merubah string menjadi number
+
+console.log( Number.isInteger(data2))// menghasilkan boolean true
+console.log( Number.isInteger("12345"))// menghasilkan boolean false
+let contohnan = Number("saya") // nan, karena nan hanya bisa meerubah string_angka,  bukan kalimat
+console.log(contohnan) // nan
+
+console.log( Number.isNaN(contohnan)) // boolean true
+console.log(Number.isSafeInteger(1235)) // true karena masih di range safeinteger
+
+//==================================
+
+// NUMBER INSTANCE METHOD
+// beberapa instance method di number, localestirng(), tostring() dll
+// to string() mengubah string ke number sesuai radix(binner,oktal,decimal dll)
+// secara default dia decimal 10, jika ingin biner isi 2, oktal 8
+
+// contoh
+
+const data3 = 1234
+const dataa = 10
+console.log(data3.toString()) // secara default decimal 10
+console.log(dataa.toString(2)) // 1010 ini mengubah ke binner , karena biner jenis 2 bilangan
+
+// to locale string
+// contoh kalini ni contoh nilai pada local indonesia
+
+const nilaiangka = 1000000
+console.log(nilaiangka) // 100000, ini secara default
+let dataindo = nilaiangka.toLocaleString("id-ID") // ini merubah ke sesuai parameter yang di masukan, dalam hal ini indonesia
+// unutk melihat code lihat di internt, List of currency culture codes atau di dokumentasi ny
+
+console.log(dataindo)
+
+   </script>
+</body>
+</html>

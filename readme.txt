@@ -1,0 +1,21 @@
+bismillahirohmanirohim
+ini materi standart library javascript materi yang di bahas diantara nya
+ - Number
+ - String
+ - Array
+ - Object
+ - JSON
+ - BigInt
+ - Date
+ - Math
+ - Boolean
+ - Map
+ - Set
+ - Symbol
+ - RegExp
+ - Proxy
+ - Reflect
+ - Encode
+ - Base64
+ - Eval
+ - Materi Selanjutnya
