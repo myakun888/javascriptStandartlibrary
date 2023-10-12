@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math</title>
+  </head>
+  <body>
+    <script>
+      //javascript juga memiliki object math(matematika)
+      // memilki beberapa static methode dan
+
+      /// pi adalah static properti dari object math, dan masih ada static priperti
+      console.log(Math.PI); // 3.14xxx
+
+      // static method
+
+      // round(). metod ini adalah membulatkan angka ke nilai yang mendekati, jika angka koma kurang dari 5 maka dia membulat ke bawah, jika koma >= 5 dia membulat ke atas
+      console.log(Math.round(9.5)); // 10
+      console.log(Math.round(9.3)); // 9
+
+      // floor(), metod ini membulatkan nilai ke bawah
+      console.log(Math.floor(7.8)); // 7
+      console.log(Math.floor(9.5)); // 9
+
+      // ceil(), metod ini membulatkan nilai ke atas
+      console.log(Math.ceil(8.1)); //9
+      console.log(Math.ceil(7.6)); //
+
+      // masih banyak metod metod lain silahkan cek di dokumentasi ny
+      // diantara nya math random(),  log() dll
+      //
+
+      //math random mengacak nilai yang ada, mulai dari index 0
+      console.log(Math.random()); //0.xxxxxx
+      // biasany random di kombinasikan dengan math lain misalny floor, round
+      console.log(Math.floor(Math.random() * 10)); // ini akan menghsilkan 0-9
+      // ini artinya random angka dengan 10 dan iondex di mulai dari 0, lalau nilain di belakang koma di hulatkan ke bawah
+      console.log(Math.floor(Math.random() * 10) + 1); // ini akan menghsilkan 0-10
+
+      // lalu ada juga min dan max
+      console.log(Math.max(1, 10, 9, 20, 90, 99)); //99
+      console.log(Math.min(1, 10, 9, 20, 90, 99)); //1
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>JSON</title>
+</head>
+<body>
+   
+   <script>
+      //json singkatan dari javascript object notation, berguna untuk menjadi tipe pertukaran data dan sudah mendukung untuk semua jenis bahas pemrograman
+      // json memiliki static method yaitu json.parse(), dan json.stringify()
+
+      const data ={
+         nama:'muhammad',
+         gelar:'SAW',
+         kitab:'alquran'
+      }
+
+      console.log(data)// ini masih berbentuk object
+
+      // json.stringify(), berguna untuk merubah data json string menjadi format object
+
+      const datajsonstringify = JSON.stringify(data);// ini sudah di covert ke json stringify
+      console.log(datajsonstringify)// hasil sdh json stringify
+
+      //json.parse(), mengubah data json string ke object
+
+      const datajson = JSON.parse(datajsonstringify)// ini di ubah kembali dari json styringy ke object
+      
+      console.log(datajson)
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Symbol</title>
+</head>
+<body>
+<script>
+//    const firstname = Symbol("firstname");
+//    const lastname = Symbol("lastname");
+   
+
+//    const data1= "nama", data2 = "nama"
+
+//    console.log( firstname===lastname)
+//    console.log( data1===data2)
+
+//    const nabi = {};
+//    nabi[firstname]="muhammad";
+//    nabi[lastname]="SAW"
+
+//    console.log(nabi)
+
+
+
+//    {
+
+
+// const  nabi ={}
+
+// nabi[Symbol.for("namadepan")]= "muhammad"
+// nabi[Symbol.for("namabelakang")]= "muhammad"
+
+
+// console.log(nabi["namadepan"]===nabi["depan"])
+
+//    }
+
+//    {
+//       let firstname = Symbol();
+//       let lastname = Symbol()
+
+
+//       class nama {
+//          constructor (nama, alamat){
+//             this[firstname]= nama,
+//             this[lastname]= alamat
+//             // this.alamat=alamat
+//          }
+//       }
+      
+      
+//       let datanabi = new nama("muhammad", "muhammad")
+//       let datanabi2 = new nama("muhammad", "arab")
+
+//       console.log(datanabi)
+//       console.log(datanabi[firstname])
+//       console.log(datanabi2)
+//       console.log(datanabi.firstname=== datanabi.lastname)
+//       console.log(firstname=== lastname)
+//    }
+
+ 
+// symbol adalah tipe data yang di garansi unique / berbeda 
+
+// cra membuat symbol yaitu dengan 
+let symbol = Symbol() // didalam function itu kita bisa isi, dalam simbol diamgap descripsi untuk membedakan symbol lain ny/ memberikan keterangan
+
+console.log(typeof(symbol))
+
+// conoth symbol selalu unqique , dibandingkan dengan string
+let symData1 = Symbol("symbol")
+let symData2 = Symbol("symbol")
+
+// string
+let strData1 = "string";
+let strData2 = "string";
+
+// di uji dengan opertor pebrdandign sama dengan dan samatipe
+console.log(symData1===symData2)// false
+console.log(strData1===strData2)// true
+
+
+// symbol juga bisa , dan kadang digunakan di object untuk menjadi value
+
+// contoh penggunaan dalam object
+const person ={}; // contoh object kosong
+
+//deklarasi symbol
+const firstname = Symbol("firstname") // jika dsecripsi ( didalam kurung) tidak di isi maka hanya menampilkan simbol, untuk memudahkan mendebug, atau agar mudah dibaca biasa nya di isi descripso ny
+const lastname = Symbol("lastname")
+
+// menggunakan tanda kurung kotak  untuk memasukan simbol menjadi key dalam object
+person[firstname]= "Muhammad";
+person[lastname]= "SAW"
+
+console.log(person)
+console.log(person[firstname]) // cara memangil nya
+console.log(person[lastname]) // cara memangil nya
+
+// kita juga bisa membuat symbol langsung di dalam variabel, ini kadang kita susah untuk mencari ny jika codingan kita sudah banyak , jadi kita bisa menggunkan static metod ny yaitu symbol.for(), jadi kita langsung membuat symbol ny di baris/ di dalam objectnya
+
+// contoh
+
+const person2 ={}
+person2[Symbol.for("firstname")] = "nabi muhammad"
+person2[Symbol.for("lastname")] = "SAW"
+
+console.log(person2)
+console.log(person2[Symbol.for("firstname")])// jika ingin memanggil properti ny cara ny seperti ini
+console.log(person2[Symbol.for("lastname")])
+
+// contoh 3
+let datax= {}
+datax[Symbol.for("firstname")]="rasulallah"
+console.log(datax)
+console.log(datax[Symbol.for("firstname")])
+</script>
+</body>
+</html>

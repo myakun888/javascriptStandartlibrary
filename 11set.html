@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Set</title>
+</head>
+<body>
+   <script>
+      //set merupakan adalah implementasi dari struktur data, yang berisikan data-data unique(tidak sama/ tidak duplikat), berisifat case sensitip
+      // set juga memiliki beberapa instance properti dan instance metod
+
+      const dataset = new Set()
+
+      dataset.add("muhammad");// add untuk menambakah data nya
+      dataset.add("ya rasulallah");
+      dataset.add("ya nabi allah");
+      dataset.add(99);
+      dataset.add("arab")
+      console.log(dataset)
+      console.log(dataset.size)// properti untuk mengecek panjang data set
+      dataset.delete("arab")// untuk emnghapus value ,
+      console.log(dataset)
+      console.log(dataset.has("muhammad"))// untuk mengecek apakah ada value/ data , return ny boolean
+
+
+      //contoh 2
+
+      const dataset2 = new Set()
+      dataset2.add("muhammad");
+      dataset2.add("muhammad");// ini tidak di masukan , karena set hanya menghitung satu data jika data tersbut duplikat/ lebih dari satu, dan bersifat case senstifi
+     dataset2.add("MUHAMMAD");
+      console.log(dataset2)
+      console.log(dataset2.size)
+
+      // iterasi pada , metod ny foeach
+
+      dataset.forEach((e)=>{ console.log(e)})
+//==================================
+      // penting
+      // jika ingin mengbuat data yang unik / mengabaikan data yang sama, gunakan set saja, karena sifat ny hanya menrima satu data yang tidak mungkins sama, tapi bersifat case sensitif
+
+   </script>
+</body>
+</html>

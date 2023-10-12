@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Object</title>
+</head>
+<body>
+   
+   <script>
+// OBJECT , memiliki beberapa librbry disni kita bahas, static metod ny,
+// ini kita bhas object.freze(), dan object.seal()
+
+// secara default kita bisa memanipulasi/properti object baik itu menghapus atau mengubah ny jika kita tidak ingin bisa di hapus kita bisa menggunakan static metod dari objet
+
+
+const nabi = {
+   nama: "muhammad",
+   gelar: "SAW",
+}
+
+const rasul = {
+   nama : 'muhammad',
+   gelar: 'saw'
+}
+
+// object.frezze, berguna untuk agar object tersebut tidak bisa di hapus/ ditambah, atau dirubah properti ny
+Object.freeze(nabi) // object nabi kita freeze
+nabi.gelar="tidak ada"
+delete nabi.gelar // tidak bisa di hapus
+nabi.tanggallahir =" 12 rabiul awal"// tidak bisa di tambhakn
+console.log(nabi)
+console.log(Object.isFrozen(nabi)) // static metod untuk mengecek nya apakah suatu object di frozen, mengembalikan boolen, true jika benar, false jika salah
+
+
+
+// object.seal , berguna untuk agar properti suat object tidak dapat dihapus/ditambah, tetapi masih bisa di ubah
+
+Object.seal(rasul)
+delete rasul.gelar // tidak bisa di hapus
+rasul.kitab= "alquran" // tidak bisa ditambah
+rasul.gelar= "SAW" // bisa di ubah
+
+console.log(rasul)
+console.log(Object.isSealed(rasul))// static metod untuk mengecek nya apakah suatu object di seal, mengembalikan boolen, true jika benar, false jika salah
+//===================================
+
+// obejet assign
+
+// kadang kita perlu menggambil properti atau , value dari object lain , kita bisa bisa menggunakan  statoc method object.assign
+
+const  data1 = { 
+   nama:"muhammad"
+}
+const data2 = { 
+   gelar: 'SAW'
+}
+console.log(data1) //nama : muhammad
+console.log(data2) // gelar: SAW
+
+ Object.assign(data1,data2) //parameter 1 adalah object target yang akan di tambahkan, parameter 2, object sumber yang akan diambil data / di copy properti nya, jika di object target memiliki properti yang sama maka properti di target akan di timpa
+ 
+console.log(data1) // data 1 mendapatkan propety dan value dari data 2
+
+// object propety name dan value
+// object juga memiliki static method untuk mengambil/ melihat isi property dan value dari suatu object dan mereturn dalam bentuk array, sebernya banyak cara untuk melihat value dan property ny misal ny menggunakan for in , for off, ini hanya memberi tahu bahwa object memiliki fitur yang mirip for in dan for off tetapi object.value dan object.getownproperti in bukan sebuat iterasi
+
+ const datanabi= {
+   nama: 'muhammad',
+   gelar: "SAW",
+   lahir: "12 rabiul awal"
+ }
+console.log(Object.getOwnPropertyNames(datanabi))// untuk mengambil property nya
+console.log(Object.values(datanabi))
+
+
+
+
+
+
+</script>
+</body>
+</html>

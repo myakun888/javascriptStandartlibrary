@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date</title>
+  </head>
+  <body>
+    <script>
+      // untuk merpresentasikan waktu jacascript memiliki object date, Date ini merpresentasikan dalam milisecond sejak 1 januari 1970 atau yang biasa di kenal dengan epoc & unix timestamp
+
+      // untuk membuat date cukup dengan Date()
+
+      let date = new Date(); // ini mengahsilkan waktu saat ini dalam string
+      console.log(date);
+
+      //date(tahun,bulan,tanggal)
+      let datedengantanggal = new Date(2023, 1, 8); // perlu di ingat untuk bulan, dan hari dia diawali dengan index 0, januari itu = 0,
+      console.log(datedengantanggal); // menampilkan tahun,bulan,tanggal dengan parameter tangal yang kita inginkan
+
+      //date(year,month,date,hours?,minute?,second?,miliscnd?)
+      let datasampai = new Date(2023, 9, 29, 0, 0, 0, 0); // ini bisa juga dengan angka
+      console.log(datasampai);
+
+      let hariinidalamepoc = Date.now(); // menghasilkan hari ini dalam satuan milisecond, epoctime
+      console.log(hariinidalamepoc);
+
+      //date.parse()
+      // ini menkoversi atau memparsing date dalam string dan mengembalikan dalam bentuk date timestamp/ milisecond
+
+      // parsing date
+      let dateparse= Date.parse("17 aug 1945")
+
+      // dalam parsing date kita harus sesuai aturan nya yaitu
+      // "YYYY-MM-DDTHH:mm:ss.sssZ" -------------- ini secara lengakp, yang wajib itu hanya sampi YYYY-MM-DD
+      // itu adalah yyyy= tahun, MM= month, DD= date , T= pemisah, hh=hours mm=minute, ss= second, sss=milisecond z= timezone
+
+      console.log(dateparse)// ini akan menjadi dalam bentuk timestamp/ unixtampstamp
+
+
+
+
+      // format date
+   //   adalah yyyy= tahun, MM= month, DD= date , T= pemisah, hh=hours mm=minute, ss= second, sss=milisecond z= timezone
+    
+   //date juga memiliki instance metode misal ny mau hanya mengambil tahun , bulan , jam, hari nya saja
+      const hariini = new Date()
+      console.log(hariini)// waktu hari ini
+      console.log(hariini.getDate())//mengambil tanggal
+      console.log(hariini.getDay())//0 = senin, merturn hari dalam angka di mana minggu sama dengan angka 0, dan setrusnya
+      console.log(hariini.getFullYear())//mengambil tahun
+      console.log(hariini.getMonth())// megambil bulan dengan 0 sama dengan januari, dan seterusnya 
+      console.log(hariini.getHours())// mengambil jam
+      console.log(hariini.getMinutes())// mengambil menit
+      console.log(hariini.getSeconds())// mengambil detik
+
+      // dan masih banyak static/ instance metod lainya
+      
+      </script>
+
+  </body>
+</html>

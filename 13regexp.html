@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Regexp (Reguler expresion)</title>
+</head>
+<body>
+<script>
+   //Regexp , reguler expresion di javascript
+   // merupakan fitur untuk mecaro text dalam bentuk pola
+   // membuat regex bisa dengan dua cara yaitu secara literal notation dan object regexp
+
+   //cara membuat regex
+ 
+
+   // ini adalah contoh text ny
+   const kisah = `nabi muhammad adalah nabi yang paling mulia dan manusia yang paling mulia diciptakan allah karena rasulallah adalah rahmat bagi alam semeseta, ya rasulallah\nya muhmmad nabi allah \nmuhammad kekasih allah \nmuhammad`
+
+
+     //1 literal notation
+   // adalah membuat regex dengan mengunakan slah / strucktur ny /yang dicari/?modifier 
+   // modiefier ny banyak ada i,g dll , bisa di kosongkan jika tidak di isi artinya dia bersifat case snstiv
+   const regex = /muhammad/g // artinya muhammada kata yang di cari, dan i  artinya incasesstive, semua kata (besar/kecl di seleksi)
+    const tidakdapat = /kosong/g
+
+   //2 degan object ,adalah membuat regexp dengan cara object
+   // degan object RegExp ("string","modifiernya")
+   const regex_object = new RegExp("rasulallah","i")// dengan object constraktor
+
+   //3 degan literal notation object
+   // struktur ny new regex (/yangdicari/,"modifier")
+   const regex_litobj = new RegExp (/[muhammad]/,"i") // ini degan cara literal notiasion di parameter pertama/ atau ini cara kombinasi cara satu dan 2
+
+
+   // untuk menggunakan regex kita mengunakan instance metod ny, beberapa instance metod yang sering di gunakan
+   //exec(value)  ,return ny value, eksekusi regex jika menemukan kata sesuai pola makan akan dikembalikan hasil nya,jika tidak maka null
+   // test(value) , return ny boolean, eksekusi regex jika menemukan sesuai pola maka hasil ny true
+
+
+
+   // contoh
+   //1
+   console.log( regex.exec(kisah))// return ny dalam bentuk array berdasarkan uurtan index array ny, yang pertama ketmu maka langsung di ambil
+   //2 
+   console.log(regex_object.exec(kisah))
+   //3 contoh yang null, karena hasil pencarian tidak di temukan
+   console.log(tidakdapat.exec(kisah))// hasil ny null
+///.................
+
+
+
+// contoh lagi ini kita pencarian global
+
+// contoh kalimat ny
+
+ const kalimatcontoh = `muhammad ya RASULALLAH  \n ya nabi allah ya rasulallah rasulallah  \n allah swt`
+
+ // ini pake cara notai=tion literal, bisa juga di tulis dengan kutip /"kata di car"/modifier ny
+ const pencarian1 = /rasulallah/g // ini artinya mencari kata rasul dan modifiernya global (g)
+const pencarian2 = /rasulallah/gi // ini pencarian incase sensitf (i) artinya huruf besar kecil tidak berpengaruh. secara default  regex itu case sensitif
+//  console.log(pencarian1.exec(kalimatcontoh))
+//  console.log(pencarian2.exec(kalimatcontoh))
+
+ // sekarang dengan bagaimana cara mengambil semua nya
+
+ const semua = /rasulallah/gi
+
+//  
+
+while ((result =semua.exec(kalimatcontoh))!==null) {
+console.log(result)
+}// ini akan menangkap semua kalimat rasullah secara global dan incase
+//jika menggunakan while jangan lupa gunakan global karena jika tidak diakan tidak berenti, menggunakan global dia jadi tau dia berenti di posisi di mana
+
+//===============
+//sebenarnya regex masih memilike banyak fitur yang lebih advance diantara ny 
+// assersions untuk mencari indikasi di awal dan akhir
+// charakter classes untuk membedakan antara huruf dan angka
+// groug dan range untuk grouping huruf dan angka
+//quantifier untuk menentukan huruf atau angka
+
+// silahkan liat di documentasi dari regexp nya 
+
+
+
+
+// selain itu regex juga menjadi instance object dari string
+// diantarany 
+// match(regex) : array , untuk mencari semua data yang sama dan return nya adalah array;
+//search(regex) : index , untuk mencari data yang sesuai degan regex nya dan mereturn index;
+//replace(regex, value)  , untuk merubah data value seusui regex, boleh pake modifier global boleh tidak;
+//replaceAll(regex,value), untuk merubah semua data value sesuai dengan regex, wajib pake modifier global(g);
+//split(regex) : array . untuk memotong string dengan regex dan return nya adalah array;
+const string = "muhammad ya nabi ku , cinta ku Muhammad, muhammad SAW"
+
+// contoh
+// match
+ console.log(string.match(/muhammad/i))
+
+//contoh search
+console.log(string.search(/ya nabi/i))// index arraay 
+
+//contoh replace
+console.log(string.replace(/ya nabi/,"ya nabi termulia"));
+
+//contoh replaceAll
+console.log(string.replaceAll(/muhammad/g,'MUHAMMAD')) 
+
+//contoh split
+console.log(string.split(" "))// ini menyeplit kalimat degan string kosong
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map object</title>
+  </head>
+  <body>
+    <script>
+      // map adalah representasi dari strcuktur data key and
+
+      // perbedaan object map dan object biasa
+      // key dari map bisa data apa saja (boolean, string, number dll) sedangkan object biasa hanya string dan symbol
+      // untuk melihat jumlah key hanya cukup menggunakan attribute size, sedangkan object biasa menggunakan iterasi
+      // secara default tidak bisa di konversi ke JSON
+
+      //membuat map
+
+      const map = new Map();
+
+      map.set("nama", "muhammad"); // menggunakan metod set untuk membuat key dan mengisi value ny , param1 adalah key nay dan param2 adalah value ny
+      map.set("gelar", "SAW");
+      console.log(map);
+      console.log(map.get("nama")) // instan metod unutk menggambil berdasarkan key ny
+
+
+      // kita bandingkan dengan  biasa
+      const objecttt = { nama: "muhammad", glear: "SAW" }; // ini langsung membuat object
+      const object2 ={};
+      object2.nama="muhammad";
+      object2.gelar="SAW"
+      console.log(object2)
+
+
+
+      // beberapa instance method dan properi dari map
+      // contoh 2
+      const contohMap2 = new Map()
+     contohMap2.set("nama","MUHAMMAD SAW") // untuk set value dan key , parm1=key, parm2= value
+     contohMap2.set("kitab","Alquran") // untuk set value dan key , parm1=key, parm2= value
+     contohMap2.set("bangsa","arab") // untuk set value dan key , parm1=key, parm2= value
+     console.log(contohMap2);
+     
+     console.log(contohMap2.get("nama"))// mengambil value berdasar kan key ny;
+     console.log(contohMap2.has("kitab"))// untuk mengecek apakah ada key yang di cari, reutrn ny boolean jika benar/ ada true, jika salah false
+     console.log(map.size)// untuk mengecek jumalah key, dengan isntance prpoperti size, mengembalikan index , dihitung dasri 0
+    console.log( contohMap2.delete("bangsa"))// menghaspu value berdasarkan key nya, dalam hal ini key ny bangsa
+     console.log(contohMap2); // maka key dan value ny berkurang
+
+      // melakukan iterasi pada map dengan for each
+
+      contohMap2.forEach((key,value)=>{ //parameter pertma, inisiasi dari key, dan param2 inisiasi dari value
+         console.log(`${key}: ${value}`)
+      })
+      contohMap2.clear()// menghapus semua isi map
+      console.log(contohMap2)
+
+      //dan masih banyak instance metod dan properti dari map silahkan baca dokumentasi ny
+
+      
+
+
+
+
+</script>
+  </body>
+</html>

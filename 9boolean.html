@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Boolean</title>
+</head>
+<body>
+
+   <script>
+      // boolean tidak banyak memiliki instanc object atau method
+      // hanya ada beberapa
+
+// secara umum boolean itu ada yaitu boolean primitve dan boolean object
+// kedua ny menghasilkan/ memilikit nilai yang sama yatu true (jika benar), false (jika salah)
+
+// boolean primitive
+ const boolean = Boolean(true)// ini menghsilkan true, kalu parameter di kosongkan dia nilai ny false
+ console.log(boolean)
+ // untuk instance method ny cuma ada tostring
+ console.log((boolean.toString()))// merubah value ny menjadi string
+
+// kalau di perhatikan jika tulisan berbeda warna jika hitam itu string
+
+
+
+ // boolean object
+ // sifat ny jg sama jika parameter tidak di isi maka false, secara default adalah kosong
+ const booleanobject = new Boolean(true) // kalau pake new / membuat object dengan object boolean
+ console.log(booleanobject) // true , dalam bentuk object
+ console.log(booleanobject.toString())// true, dalam bentuk string
+ 
+   </script>
+   
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Big Integer</title>
+</head>
+<body>
+
+   <script>
+ // big integer , sama seperti number biasa, perbedaan nya range angka ny lebih besar dari number max integer , max safe integer, dan jangakaun minimal ny lebih besar dari number min integer, min safe integer, jadi jika kita membuat angka yang lebih besar (max dan min) dari number rekomendasikan gunakan big int
+ 
+ const a = BigInt(Number.MAX_SAFE_INTEGER)
+ const b = BigInt(Number.MAX_SAFE_INTEGER)
+
+ const c = a + b
+
+ // tips ny jika kita menggunakan angak yang lebih dari max, max safe integer gunakan big int, bisa gunkan converi dengan static method Bigint()
+
+ // perbedaan / untuk melihat sebuah number itu big integer di tandai dengan angka "n" di ujung / akhir sebua angka ny
+ console.log(c)
+ console.log(typeof(c))
+ console.log(typeof(c)==="bigint") // true
+ 
+ // perbedaan number dan big int hanya di ujung ny saja ada huruf n
+
+ // SECARA FUNGSI , OPERATOR MATEMATIKA DLL SEMUA SAMA SEPERTI PERILAKU NUMBER PADA UMUM NY
+ console.log( Number.MAX_SAFE_INTEGER)
+ const nilaibigint = BigInt(Number.MAX_SAFE_INTEGER)
+ console.log(nilaibigint)// bigint
+
+ 
+ 
+
+
+   </script>
+</body>
+</html>
